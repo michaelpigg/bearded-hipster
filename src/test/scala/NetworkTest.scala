@@ -2,7 +2,7 @@ import java.net.InetAddress
 import java.net.NetworkInterface
 import org.scalatest.matchers.MustMatchers
 import org.scalatest.WordSpec
-
+import scala.collection.JavaConversions._
 class NetworkTest extends WordSpec with MustMatchers {
 
   "getNetworkAddress" must {
