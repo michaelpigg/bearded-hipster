@@ -15,6 +15,12 @@ class NetworkTest extends WordSpec with MustMatchers {
       ha must not be(null)
 
     }
+
+    "iterate MAC address" in {
+      for {
+        ni: NetworkInterface <- NetworkInterface.getNetworkInterfaces
+      } println(s"if: ${ni.getName} hw addr: ${ni.getHardwareAddress}")
+    }
   }
 }
 
