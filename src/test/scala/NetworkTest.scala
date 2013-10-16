@@ -17,9 +17,12 @@ class NetworkTest extends WordSpec with MustMatchers {
     }
 
     "iterate MAC address" in {
-      for {
-        ni: NetworkInterface <- NetworkInterface.getNetworkInterfaces
-      } println(s"if: ${ni.getName} hw addr: ${ni.getHardwareAddress}")
+      val nis = NetworkInterface.getNetworkInterfaces
+      while (nis.hasMoreElements) {
+        val ni = nis.nextElement()
+        println("if " + ni.getName)
+        println("hw " + ni.getHardwareAddress)
+      }
     }
   }
 }
