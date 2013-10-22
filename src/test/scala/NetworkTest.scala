@@ -5,13 +5,13 @@ import org.scalatest.WordSpec
 class NetworkTest extends WordSpec with MustMatchers {
 
   "getNetworkAddress" must {
-    "work on single call" in {
-      val networkInterfacesEnum = NetworkInterface.getNetworkInterfaces
-      val ni = networkInterfacesEnum.nextElement()
-      println("if " + ni.getName)
-      val ha = ni.getHardwareAddress
-      println("hw " + ha)
-    }
+    // "work on single call" in {
+    //   val networkInterfacesEnum = NetworkInterface.getNetworkInterfaces
+    //   val ni = networkInterfacesEnum.nextElement()
+    //   println("if " + ni.getName)
+    //   val ha = ni.getHardwareAddress
+    //   println("hw " + ha)
+    // }
     "return MAC address" in {
       val networkInterfacesEnum = NetworkInterface.getNetworkInterfaces
       val networkInterfaces = scala.collection.JavaConverters.enumerationAsScalaIteratorConverter(networkInterfacesEnum).asScala
@@ -30,9 +30,9 @@ class NetworkTest extends WordSpec with MustMatchers {
       }
     }
 
-    "maybe work from Java code" in {
-      JavaNetworkInterface.iterateInterfaces()
-    }
+    // "maybe work from Java code" in {
+    //   JavaNetworkInterface.iterateInterfaces()
+    // }
   }
 }
 
