@@ -10,7 +10,9 @@ class NetworkTest extends WordSpec with MustMatchers {
       if (networkInterfacesEnum.hasMoreElements) {
         val ni = networkInterfacesEnum.nextElement()
         println("if" + ni.getName)
-        println("hw" + ni.getHardwareAddress)
+        val ha = ni.getHardwareAddress
+        println("hw" + ha)
+        ha
       }      
     }
     "return MAC address" in {
