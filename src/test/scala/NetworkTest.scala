@@ -7,13 +7,10 @@ class NetworkTest extends WordSpec with MustMatchers {
   "getNetworkAddress" must {
     "work on single call" {
       val networkInterfacesEnum = NetworkInterface.getNetworkInterfaces
-      if (networkInterfacesEnum.hasMoreElements) {
-        val ni = networkInterfacesEnum.nextElement()
-        println("if" + ni.getName)
-        val ha = ni.getHardwareAddress
-        println("hw" + ha)
-        ha
-      }      
+      val ni = networkInterfacesEnum.nextElement()
+      println("if" + ni.getName)
+      val ha = ni.getHardwareAddress
+      println("hw" + ha)
     }
     "return MAC address" in {
       val networkInterfacesEnum = NetworkInterface.getNetworkInterfaces
