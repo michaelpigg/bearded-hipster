@@ -1,0 +1,4 @@
+#scalac -cp lib_managed/jars/org.scalatest/scalatest_2.10/scalatest_2.10-2.0.RC2.jar src/main/scala/JavaNetworkInterface.java src/main/scala/Main.scala src/test/scala/NetworkTest.scala
+#java -cp lib_managed/jars/org.scala-lang/scala-compiler/scala-compiler-2.10.0.jar:lib_managed/jars/org.scala-lang/scala-library/scala-library-2.10.0.jar:lib_managed/jars/org.scala-lang/scala-reflect/scala-reflect-2.10.0.jar:lib_managed/jars/org.scala-lang/jline/jline-2.10.0.jar:lib_managed/jars/org.scalatest/scalatest_2.10/scalatest_2.10-2.0.RC2.jar scala.tools.nsc.Main src/main/scala/* src/test/scala/*
+java -cp lib_managed/jars/org.scalatest/scalatest_2.10/scalatest_2.10-2.0.RC2.jar:target/scala-2.10/classes:target/scala-2.10/test-classes:lib_managed/jars/org.scala-lang/scala-library/scala-library-2.10.0.jar org.scalatest.tools.Runner -o -R target/scala-2.10/test-classes
+
