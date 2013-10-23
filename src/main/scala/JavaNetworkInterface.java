@@ -2,6 +2,10 @@ import java.net.NetworkInterface;
 import java.util.Enumeration;
 
 public class JavaNetworkInterface {
+    public static void main(String[] args) {
+        iterateInterfaces();
+    }
+
     public static void iterateInterfaces() {
         try {
             Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
@@ -11,7 +15,7 @@ public class JavaNetworkInterface {
                 System.out.println("hw: " + ni.getHardwareAddress());
             }
         } catch (Exception e) {
-            System.out.println("exception: " + e.toString());
+            throw new RuntimeException("exception: " + e.toString());
         }
 
     }
